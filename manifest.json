@@ -1,0 +1,27 @@
+{
+  "name": "InstaEngagementFilter",
+  "version": "1.0",
+  "description": "Filter posts on engagement.",
+  "manifest_version": 2,
+  "permissions": [
+    "contextMenus",
+    "storage"
+  ],
+  "background": {
+    "scripts": ["jquery.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.instagram.com/explore/tags/*"
+      ],
+      "js": ["jquery.js",  "main.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
+}
